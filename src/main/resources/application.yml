@@ -1,0 +1,32 @@
+mybatis:
+  configuration:
+    # MyBatis 配置文件的路径，这里设置为在 classpath 根目录下的 mybatis-config.xml 文件
+    location: classpath:mybatis-config.xml
+
+  # 数据库实例的连接信息，这里以 MySQL 为例
+  # 需要根据自己的实际情况修改
+  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: cn.ehai.chatgpt.domain
+  configuration-properties:
+    # 开启驼峰命名自动映射，将数据库表的下划线风格的字段名映射为 Java 类的驼峰命名字段名
+    mapUnderscoreToCamelCase: true
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://xxx.xxx.x.xx:3306/xxxx
+    username: username
+    password: password
+    # 连接池的配置
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+server:
+  port: 8880
+  servlet:
+    context-path: /chatGPT
+
+

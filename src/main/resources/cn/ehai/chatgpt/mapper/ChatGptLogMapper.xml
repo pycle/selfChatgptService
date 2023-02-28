@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ehai.chatgpt.mapper.ChatGptLogMapper" >
+  <resultMap id="BaseResultMap" type="cn.ehai.chatgpt.domain.ChatGptLog" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="form" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="to" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="continuation_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+<!--      <arg column="gmt_create" jdbcType="TIMESTAMP" javaType="java.util.Date" />-->
+<!--      <arg column="gmt_modified" jdbcType="TIMESTAMP" javaType="java.util.Date" />-->
+    </constructor>
+  </resultMap>
+
+  <insert id="insert" parameterType="cn.ehai.chatgpt.domain.ChatGptLog" >
+    insert into chatgpt_log (form, `to`,content, continuation_id, `state`)
+    values ( #{form,jdbcType=VARCHAR}, #{to,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{continuationId,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}
+     )
+  </insert>
+
+</mapper>

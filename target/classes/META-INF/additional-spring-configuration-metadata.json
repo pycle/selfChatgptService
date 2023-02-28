@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.mvc.pathmatch.matching-strategy",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.mvc.pathmatch.matching-strategy."
+    },
+    {
+      "name": "mybatis.configuration-properties.mapUnderscoreToCamelCase",
+      "type": "java.lang.String",
+      "description": "Description for mybatis.configuration-properties.mapUnderscoreToCamelCase."
+    }
+  ] }
